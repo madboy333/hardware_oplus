@@ -25,7 +25,6 @@ import android.content.SharedPreferences;
 import android.provider.Settings;
 import androidx.preference.PreferenceManager;
 
-import org.evolution.oplus.OPlusExtras.doze.DozeUtils;
 import org.evolution.oplus.OPlusExtras.FileUtils;
 import org.evolution.oplus.OPlusExtras.modeswitch.*;
 import org.evolution.oplus.OPlusExtras.preferences.*;
@@ -43,7 +42,6 @@ public class Startup extends BroadcastReceiver {
         AdrenoBoostPreference.restore(context);
         BluePreference.restore(context);
         ContrastPreference.restore(context);
-        DozeUtils.checkDozeService(context);
         GreenPreference.restore(context);
         HuePreference.restore(context);
         OPlusExtras.restoreSliderStates(context);

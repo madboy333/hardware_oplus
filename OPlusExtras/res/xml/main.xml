@@ -68,16 +68,7 @@
         android:key="display"
         android:title="@string/display_title">
 
-        <Preference
-            android:key="advanced_doze_settings"
-            android:title="@string/ambient_display_gestures_title"
-            android:summary="@string/ambient_display_gestures_summary"
-            android:persistent="false" >
-            <intent android:action="android.intent.action.MAIN"
-                    android:targetClass="org.evolution.oplus.OPlusExtras.doze.DozeSettingsActivity" />
-        </Preference>
-
-        <Preference
+         <Preference
             android:key="kcal"
             android:title="@string/kcal_settings_title"
             android:summary="@string/kcal_settings_summary"

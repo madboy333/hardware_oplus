@@ -52,7 +52,6 @@ import java.util.Random;
 
 import com.plattysoft.leonids.ParticleSystem;
 
-import org.evolution.oplus.OPlusExtras.doze.DozeSettingsActivity;
 import org.evolution.oplus.OPlusExtras.FileUtils;
 import org.evolution.oplus.OPlusExtras.modeswitch.*;
 import org.evolution.oplus.OPlusExtras.preferences.*;
@@ -71,7 +70,6 @@ public class OPlusExtras extends PreferenceFragment
     private ListPreference mTopKeyPref;
 
     public static final String KEY_CATEGORY_DISPLAY = "display";
-    public static final String KEY_DOZE = "advanced_doze_settings";
     public static final String KEY_KCAL = "kcal";
     public static final String KEY_PER_APP_REFRESH_RATE = "per_app_refresh_rate";
     public static final String KEY_DC_SWITCH = "dc";
@@ -79,7 +77,6 @@ public class OPlusExtras extends PreferenceFragment
     public static final String KEY_AUTO_HBM_SWITCH = "auto_hbm";
     public static final String KEY_AUTO_HBM_THRESHOLD = "auto_hbm_threshold";
     public static final String KEY_HBM_INFO = "hbm_info";
-    private Preference mDozeSettings;
     private static TwoStatePreference mDCModeSwitch;
     private static TwoStatePreference mHBMModeSwitch;
     private static TwoStatePreference mAutoHBMSwitch;
@@ -154,14 +151,6 @@ public class OPlusExtras extends PreferenceFragment
         }
 
         boolean displayCategory = false;
-
-        // DozeSettings Activity
-        mDozeSettings = (Preference)findPreference(KEY_DOZE);
-        mDozeSettings.setOnPreferenceClickListener(preference -> {
-            Intent intent = new Intent(getActivity().getApplicationContext(), DozeSettingsActivity.class);
-            startActivity(intent);
-            return true;
-        });
 
         // Kcal
         displayCategory = displayCategory | isFeatureSupported(context, R.bool.config_deviceSupportsKcal);
